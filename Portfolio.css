@@ -1,0 +1,100 @@
+/* 1.css */
+        @import url('https://fonts.googleapis.com/css2?family=Quando:wght@400&family=Radley:ital,wght@0,400;1,400&family=Dancing+Script:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700;900&display=swap');
+        
+        * {
+            font-family: 'Quando', Radley, serif;
+        }     
+
+       /* .gradient-bg {
+            background: linear-gradient(135deg, #373b44 0%, #4286f4 100%);
+        } */
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #373b44 0%, #4286f4 100%);
+            background-image: url('bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .gradient-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(55, 59, 68, 0.7);
+            z-index: 1;
+        }
+        
+        .gradient-bg > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .skill-bar {
+            width: 0%;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .typing-animation {
+            border-right: 2px solid #667eea;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: #667eea; }
+            51%, 100% { border-color: transparent; }
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #667eea;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .project-overlay {
+            background: rgba(102, 126, 234, 0.9);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
